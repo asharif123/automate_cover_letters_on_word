@@ -11,14 +11,14 @@ import pandas as pd
 ##open document you wish to use
 doc = DocxTemplate("my_word_template.docx")
 
-##content to render
-# context = {'company_name': "World company"}
+##your personal content
 my_name = "Awad Sharif"
 my_address = "9761 Johannah Avenue"
 city = "Garden Grove"
 phone = 7145527522
 email = "awadsharif9@gmail.com"
-#convert string to time
+
+##convert string to time
 date = datetime.now().strftime("%m/%d/%y")
 # {{ recipient_name }}
 # {{ recipient_title }}
@@ -32,7 +32,7 @@ df = pd.read_csv('fake_data.csv')
 
 ##read data off each row (prints row and corresponding index)
 for index, row in df.iterrows():
-##ex: parameters from word document: row['column name']
+##ex: parameters from word document: row['column name'] from excel file
     my_context = {
          'recipient_name': row['name'],
          'email': row["email"],
@@ -40,7 +40,7 @@ for index, row in df.iterrows():
          'phone': row["phone_number"],
          'company_name': row["company"]
     }
-    ##update context with my_context having your info
+    ##update context with my_context having personal info
     context.update(my_context)
 
     ##add data to the document
