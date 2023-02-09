@@ -1,6 +1,7 @@
-##create multiple cover letters
+#### create multiple cover letters ####################
 
 
+##library to read word documents
 from docxtpl import DocxTemplate
 from datetime import datetime
 
